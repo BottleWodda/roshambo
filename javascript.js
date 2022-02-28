@@ -1,36 +1,41 @@
+const choices = ['rock', 'paper', 'scissors'];
+const playerSelection = userPlay();
+const computerSelection = computerPlay();
 
+//loops five rounds of the game
+function game() {
+    for (let i = 0; i <=5; i++) {
+        playRound();
+    }
+    console.log('You chose ' + playerSelection + '.');
+    console.log('Computer chose ' + computerSelection + '.');
+    console.log(playRound(playerSelection, computerSelection));
+}
 
-// The user inputs rock, paper or scissors into a prompt box.
-
-// The computer returns a random result of rock, paper or scissors.
-    
+//computer makes random choice. 
 function computerPlay() {
-    let random = Math.floor(Math.random() * 3);
-    if (random === 0) {
-        return "Scissors";
-    } else if (random === 1) {
-        return "Paper";
-    } else {
-        return "Rock";
-    }
-    }
-  
+    return choices[Math.floor(Math.random() * choices.length)]; 
+}
 
-// The Player versus Computer in a round 
-
-
-// If it is a tie, console prints "You tied".
+//user selects from options.
+function userPlay () {
+    return prompt("Select Scissors, Paper or Rock.")
     
-// Rock beats scissors.
+}
 
-// Scissors beats paper.
+//single round is played.
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return 'It\'s a Tie!' 
+} else if (playerSelection === 'rock' && computerSelection === 'scissors' || 
+           playerSelection === 'scissors' && computerSelection === 'paper' ||
+           playerSelection === ' paper' && computerSelection === 'rock') {
+        return 'You Win!!'
+} else {
+    return 'Computer Wins!';
+}
+}
 
-// Paper beats rock.
 
-// Win or lose result is printed in the console log. 
-
-// The game lasts for five rounds. 
-
-// When five games have passed the score out of five is printed in the console log.
-
-console.log(computerPlay());
+//calls in the game function to play the game.
+game();
