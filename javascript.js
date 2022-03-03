@@ -1,19 +1,21 @@
 //Global variables which apply to any function.
 const choices = ['rock', 'paper', 'scissors'];
-const playerSelection = userPlay();
+const draw = "It's a Draw!";
+const playerWin = "You Win!";
+const computerWin = "Computer Wins!";
+let playerSelection = prompt;
 const computerSelection = computerPlay();
-const draw = ("It's a Draw!");
-const playerWin = ("You Win!");
-const computerWin = ("Computer Wins!");
 let playerScore = 0;
 let computerScore = 0;
 
 //loops five rounds of the game
 function game() {
     for (let i = 1; i <= 5; i++) {
+        userPlay();
         playRound();
+        console.log('Round: ' + i);
+        roundResult();    
     }
-    roundResult();
 }
 
 //computer makes random choice. 
@@ -23,8 +25,8 @@ function computerPlay() {
 
 //user selects from options.
 function userPlay() {
-    return prompt ("Select Scissors, Paper or Rock.").toLowerCase();
-    
+    let playerChoice = prompt ("Select Scissors, Paper or Rock.").toLowerCase();
+    return playerChoice
 }
 
 //single round is played.
@@ -49,10 +51,9 @@ function roundResult() {
     console.log(playRound(playerSelection, computerSelection));
     console.log('Your score: ' + playerScore);
     console.log('Computer score: ' + computerScore);
-    console.log('Draws: ');
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 }
 
-
 //calls in the game function to play the game.
 game();
+
