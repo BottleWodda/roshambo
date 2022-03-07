@@ -3,7 +3,7 @@ const choices = ['rock', 'paper', 'scissors'];
 const draw = "It's a Draw!";
 const playerWin = "You Win!";
 const computerWin = "Computer Wins!";
-let playerSelection = prompt;
+const playerSelection = userPlay(playerChoice);
 const computerSelection = computerPlay();
 let playerScore = 0;
 let computerScore = 0;
@@ -26,7 +26,7 @@ function computerPlay() {
 //user selects from options.
 function userPlay() {
     let playerChoice = prompt ("Select Scissors, Paper or Rock.").toLowerCase();
-    return playerChoice
+    return playerChoice;
 }
 
 //single round is played.
@@ -56,4 +56,3 @@ function roundResult() {
 
 //calls in the game function to play the game.
 game();
-
