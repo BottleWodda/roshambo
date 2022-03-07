@@ -9,6 +9,11 @@ function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
 }
 
+function userPlay() {
+    let playerChoice= prompt('Choose rock, paper or scissors');
+    return playerChoice;
+}
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock' && computerSelection == 'scissors') {
         playerScore++;
@@ -35,15 +40,19 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     playRound();
+    logResults();
 }
 
-const playerSelection = prompt('Enter rock, paper or scissors.');
+const playerSelection = userPlay();
 const computerSelection = computerPlay();
+
+function logResults() {
 console.log('You chose ' + playerSelection + '.');
 console.log('Computer chose ' + computerSelection + '.');
 console.log(playRound(playerSelection, computerSelection));
 console.log('Your score: ' + playerScore);
 console.log('Computer score: ' + computerScore);
 console.log('------------------------------------');
+}
 
 game();
