@@ -38,12 +38,13 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return tie;
     }
+    
 }
 
 function game() {
 //for (let i = 0; i < 5; i++) {
     const computerSelection = computerPlay()
-    let playerSelection = document.getElementById;
+    let playerSelection = document.querySelector('buttons');
     console.log('You chose ' + playerSelection + '.');
     console.log('Computer chose ' + computerSelection + '.');
     console.log(playRound(playerSelection, computerSelection))
@@ -51,7 +52,7 @@ function game() {
     console.log('Computer score: ' + computerScore);
     console.log('------------------------------------');
     if (computerScore == 5 || playerScore == 5) {
-        finalResult();
+        return finalResult();
     }
 }
 
