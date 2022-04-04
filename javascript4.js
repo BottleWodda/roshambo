@@ -58,13 +58,6 @@ function finalResult() {
     }
 }
 
-// Trying to animate the buttons.
-//function keyPress(e) {
- //   const key = document.querySelector('button');
- //   key.classList.add('keypress');
- //   console.log(e.target);
-//}
-
 function unPress(e) {
     if (e.propertyName !== 'transform') return;
     this.classList.remove('keypress');
