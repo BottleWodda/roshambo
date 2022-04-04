@@ -28,6 +28,8 @@ buttons.forEach((button) => {
     })
 });
 
+
+
 function playRound(playerSelection, computerSelection) {
     const win = 'Round won!';
     const loss = 'Round lost!';
@@ -58,11 +60,13 @@ function playRound(playerSelection, computerSelection) {
   function finalResult() {
     if (playerScore > computerScore) {
         document.getElementById('finalResult').innerHTML = 'You Win!';
+        document.getElementById('replay').innerText = 'Choose Rock, Paper or Scissors to play again';
         playerScore = 0;
         computerScore = 0;
         
     } else {
         document.getElementById('finalResult').innerHTML = 'Computer Wins!';
+        document.getElementById('replay').innerText = 'Choose Rock, Paper or Scissors to play again';
         playerScore = 0;
         computerScore = 0;
     }

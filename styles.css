@@ -22,7 +22,9 @@
 #playerChoice,
 #playerResult,
 #computerChoice,
-#computerResult {
+#computerResult,
+#finalResult,
+#replay {
     margin-top: 20px;
     margin-bottom: 20px;
 }
