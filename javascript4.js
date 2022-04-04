@@ -13,21 +13,22 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         let playerSelection = button.id;
         let computerSelection = computerPlay();
+        let pScore = playerScore;
+        let cScore = computerScore;
+        let pChoice = playerSelection;
+        let cChoice =  computerSelection
         
-            console.log('You chose ' + playerSelection + '.');
-            console.log('Computer chose ' + computerSelection + '.');
-            console.log(playRound(playerSelection, computerSelection))
-            console.log('Your score: ' + playerScore);
-            console.log('Computer score: ' + computerScore);
-            console.log('------------------------------------');
+        document.getElementById('playerResult').innerHTML = 'Your score: ' + pScore;
+        document.getElementById('computerResult').innerHTML = 'Computer score: ' + cScore;
+        document.getElementById('playerChoice').innerHTML = 'You chose ' + pChoice;
+        document.getElementById('computerChoice').innerHTML = 'Computer chose ' + cChoice;
+
         //Ends game when score of 5 is reached
         if (computerScore == 5 || playerScore == 5) {
             return finalResult();
         }
     })
 });
-
-
 
 function playRound(playerSelection, computerSelection) {
     const win = 'Round won!';
