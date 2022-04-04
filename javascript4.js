@@ -1,7 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 
-const buttons = document.querySelectorAll('button');
+//This function plays a round and displays results in console every time a button is clicked. 
+const buttons = document.querySelectorAll('button'); 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playRound(), game();
@@ -41,10 +42,12 @@ function playRound(playerSelection, computerSelection) {
     
 }
 
+
+//this function defines the player and computer choices, then displays final results after a score reaches 5.
 function game() {
 //for (let i = 0; i < 5; i++) {
-    const computerSelection = computerPlay()
-    let playerSelection = document.querySelector('buttons');
+    let playerSelection = buttons.id; //not sure how to get button id to be playerSelection variable.
+    const computerSelection = computerPlay();
     console.log('You chose ' + playerSelection + '.');
     console.log('Computer chose ' + computerSelection + '.');
     console.log(playRound(playerSelection, computerSelection))
