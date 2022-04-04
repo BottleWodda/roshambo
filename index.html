@@ -15,12 +15,14 @@
     </header>
 
     <div id = 'buttons'>
-        <button value="rock" id='btn'>Rock</button>
-        <button value="paper" id='btn'>Paper</button>
-        <button value="scissors" id='btn'>Scissors</button>
+        <button id="rock" onClick="playRound(this.id)">Rock</button>
+        <button id="paper" onClick="playRound(this.id)">Paper</button>
+        <button id="scissors" onClick="playRound(this.id)">Scissors</button>
     </div>
 
     <div id = 'results'>
+        <div id = 'playerChoice'>You chose </div> 
+        <div id = 'computerChoice'>Computer Chose </div>
         <div id = 'playerResult'>Player Score: </div>
         <div id = 'computerResult'>Computer Score: </div>
     </div>
