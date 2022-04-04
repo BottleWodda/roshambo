@@ -3,8 +3,8 @@ let computerScore = 0;
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        keyPress();
+    button.addEventListener('click', (e) => {
+        e.target.classList.add('keypress');
         playRound(playerSelection = button.id, computerSelection = computerPlay());
         let pScore = playerScore;
         let cScore = computerScore;
@@ -59,10 +59,11 @@ function finalResult() {
 }
 
 // Trying to animate the buttons.
-function keyPress() {
-    const key = document.querySelector('button');
-    key.classList.add('keypress');
-}
+//function keyPress(e) {
+ //   const key = document.querySelector('button');
+ //   key.classList.add('keypress');
+ //   console.log(e.target);
+//}
 
 function unPress(e) {
     if (e.propertyName !== 'transform') return;
