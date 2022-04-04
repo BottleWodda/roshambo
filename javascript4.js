@@ -11,18 +11,16 @@ function computerPlay() {
 //Player chooses and round is played
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        let playerSelection = button.id;
-        let computerSelection = computerPlay();
+        playRound(playerSelection = button.id, computerSelection = computerPlay());
         let pScore = playerScore;
         let cScore = computerScore;
         let pChoice = playerSelection;
         let cChoice =  computerSelection
-        
-        document.getElementById('playerResult').innerHTML = 'Your score: ' + pScore;
-        document.getElementById('computerResult').innerHTML = 'Computer score: ' + cScore;
         document.getElementById('playerChoice').innerHTML = 'You chose ' + pChoice;
         document.getElementById('computerChoice').innerHTML = 'Computer chose ' + cChoice;
-
+        document.getElementById('playerResult').innerHTML = 'Your score: ' + pScore;
+        document.getElementById('computerResult').innerHTML = 'Computer score: ' + cScore;
+    
         //Ends game when score of 5 is reached
         if (computerScore == 5 || playerScore == 5) {
             return finalResult();
@@ -34,22 +32,22 @@ function playRound(playerSelection, computerSelection) {
     const win = 'Round won!';
     const loss = 'Round lost!';
     const tie = 'Round tied!';
-    if (playerSelection === 'rock' && computerSelection == 'scissors') {
+    if (playerSelection == 'rock' && computerSelection == 'scissors') {
         playerScore++;
         return win;
-    } else if (playerSelection === 'rock' && computerSelection == 'paper') {
+    } else if (playerSelection == 'rock' && computerSelection == 'paper') {
         computerScore++;
         return loss;
-    } else if (playerSelection === 'paper' && computerSelection == 'rock') {
+    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
         playerScore++;
         return win; 
-    } else if (playerSelection === 'paper' && computerSelection == 'scissors') {
+    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
         computerScore++;
         return loss;
-    } else if (playerSelection === 'scissors' && computerSelection == 'paper') {
+    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         playerScore++;
         return win;
-    } else if (playerSelection === 'scissors' && computerSelection == 'rock') {
+    } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
         computerScore++;
         return loss;
     } else {
@@ -59,10 +57,13 @@ function playRound(playerSelection, computerSelection) {
 
   function finalResult() {
     if (playerScore > computerScore) {
-        confirm('You win the game! Play again?');
-        location.reload();
+        document.getElementById('finalResult').innerHTML = 'You Win!';
+        playerScore = 0;
+        computerScore = 0;
+        
     } else {
-        confirm('Computer wins the game! Play again?')
-        location.reload();
+        document.getElementById('finalResult').innerHTML = 'Computer Wins!';
+        playerScore = 0;
+        computerScore = 0;
     }
 }
